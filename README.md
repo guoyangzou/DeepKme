@@ -41,3 +41,6 @@ DeepKme is the predictor for lysine methylation sites in human proteome. Here is
             x = self.simple(x)
 
             return x
+When using the the model to make prediction, we can use:
+    
+    model.load_weights("C:/Users/zou/Downloads/0_0.hdf5")  # "C:/Users/zou/Downloads/0_0.hdf5" is your model's parameter file.
