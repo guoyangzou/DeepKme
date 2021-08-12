@@ -45,7 +45,7 @@ When using the the model to make prediction, we can use:
     
     import pandas as pd
     model.load_weights("C:/Users/zou/Downloads/0_0.hdf5")  # "C:/Users/zou/Downloads/0_0.hdf5" is your model's parameter file.
-    df_Kme = pd.read_csv("C:/Users/zou/Downloads/KmeSites_Collected.txt")
+    df_Kme = pd.read_csv("C:/Users/zou/Downloads/KmeSites_Collected.txt")  # please replace it with your file.
     
     def fun_ser_to_numpy_onehot(Se,label):
         AAs = ['Q', 'L', 'N', 'G', 'R', 'F', '_', 'W', 'T', 'E', 'K', 'I', 'D', 'V', 'Y', 'S', 'A', 'C', 'M', 'H', 'P']
