@@ -44,8 +44,11 @@ DeepKme is the predictor for lysine methylation sites in human proteome. Here is
 When using the the model to make prediction, we can use:
     
     import pandas as pd
-    model.load_weights("https://github.com/guoyangzou/DeepKme/tree/main/Model/0_0.hdf5")  # your file path
-    df_Kme = pd.read_csv("https://github.com/guoyangzou/DeepKme/tree/main/datasets/KmeSites_Collected.csv")  # your file path
+    import numpy as np
+    model.build((None,61*21))
+    model.summary()
+    model.load_weights("./Model/0_0.hdf5")  # your file path
+    df_Kme = pd.read_csv("./datasets/KmeSites_Collected.csv")  # your file path
     
     def fun_ser_to_numpy_onehot(Se,label):
         AAs = ['Q', 'L', 'N', 'G', 'R', 'F', '_', 'W', 'T', 'E', 'K', 'I', 'D', 'V', 'Y', 'S', 'A', 'C', 'M', 'H', 'P']
@@ -63,7 +66,7 @@ When using the the model to make prediction, we can use:
     x_data_pos, y_data_pos = np_data_pos[:,:-1],np_data_pos[:,-1]
     y_pred_pos = model.predict(x_data_pos,1500)
 
-    Neg_test = pd.read_csv("https://github.com/guoyangzou/DeepKme/tree/main/datasets/Negative_samples.txt")["0"]
+    Neg_test = pd.read_csv("./datasets/Negative_samples.txt")["0"]
     np_data_neg = fun_ser_to_numpy_onehot(Neg_test,0)
     x_data_neg, y_data_neg = np_data_neg[:,:-1],np_data_neg[:,-1]
     y_pred_neg = model.predict(x_data_neg,1500)
