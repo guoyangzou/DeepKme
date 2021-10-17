@@ -88,7 +88,7 @@ You can use it to make prediction:
     print("AUC：%.3f"%result)
 
 
-if you want to replicate the Paper, please install conda first (https://conda.io/en/latest/miniconda.html#windows-installers) and ensure it is successful. 
+If you want to replicate the paper, please install conda first (https://conda.io/en/latest/miniconda.html#windows-installers) and ensure it is successful. 
 Then run the following to create an environment and open your jupyter notebook in your browser:
 
     conda create -n ML2  -c conda-forge -c pytorch python=3.9 pytorch=1.9 tensorflow=2.6 cudnn=8 cudatoolkit=11 scipy pandas openpyxl xlrd jupyterlab jupyter_contrib_nbextensions
