@@ -98,4 +98,4 @@ Then run the following to create an environment and open your jupyter notebook i
     jupyter notebook
 
 Open the DeepKme.ipynb in your browser where your jupyter notebook works. 
-Then your can run each cell to replicate the paper's work.
+Then your can run each cell to replicate the paper's main works.
