@@ -1,1 +1,1 @@
-These datasets can be gained through processing the original datasets.
+KmeSites_Collected.csv is the positive samples. Negative_samples_for_*.csv is the negative samples extracted from Uniprot.csv excluding the positive samples. The other files include Kme information from different databases.
