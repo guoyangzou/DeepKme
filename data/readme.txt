@@ -1,1 +1,1 @@
-All the data encoded. They can be gained through processing our datasets.
+This folder contains temporary files generated during the running of the jupyter notebook.
