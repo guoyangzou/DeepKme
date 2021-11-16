@@ -67,10 +67,10 @@ The following is the definition of DeepKme using python.
 You can use it to make prediction:
     
     # load weights to the defined model
-    model.load_weights("./Model_split/Km1_CSTCS_3746.hdf5")  
+    model.load_weights("./Model_split/Km1_CSTCS_3746.hdf5")  # you can load any model weights as you need in Model_split folder.
     
     # load the positive samples
-    df_Kme = pd.read_csv("./datasets/KmeSites_Collected.csv")  
+    df_Kme = pd.read_csv("./datasets/KmeSites_Collected.csv")  # you can prepare your own unlabled datasets for predicting the Kme/1/2/3 score.
 
     # encoding
     def fun_ser_to_numpy_onehot(Se,label):
