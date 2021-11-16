@@ -70,7 +70,7 @@ You can use it to make prediction:
     model.load_weights("./Model_split/Km1_CSTCS_3746.hdf5")  ## you can load any model weights as you need in Model_split folder.
     
     # Load the positive samples
-    df_Kme = pd.read_csv("./datasets/KmeSites_Collected.csv")  ## you can prepare your own unlabled datasets for predicting the Kme/1/2/3 score.
+    df_Kme = pd.read_csv("./datasets/KmeSites_Collected.csv")  ## you can prepare your own unlabled datasets for predicting the Km1/2/3/e score.
 
     # Encoding
     def fun_ser_to_numpy_onehot(Se,label):
@@ -90,7 +90,7 @@ You can use it to make prediction:
     y_data_pos = np_data_pos[:,-1]  ## If you just make prediction for your own unlabled datasets, this step should be passed.
 
     # Make prediction in the positive samples
-    y_pred_pos = model.predict(x_data_pos,1500)
+    y_pred_pos = model.predict(x_data_pos,1500)  ## If you make prediction for your own unlabled datasets, this step would get the Km1/2/3/e score.
 
     # Load the negative samples
     Neg_test = pd.read_csv("./datasets/Negative_samples_for_test.csv")["Negative_samples_for_test"]
