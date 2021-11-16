@@ -65,7 +65,9 @@ The following is the definition of DeepKme using python.
     model.summary()
 
 You can use it to make prediction:
-
+    # load weights to the defined model
+    model.load_weights("./Model_split/Km1_CSTCS_3746.hdf5")  
+    
     # load the positive samples
     df_Kme = pd.read_csv("./datasets/KmeSites_Collected.csv")  
 
@@ -94,7 +96,6 @@ You can use it to make prediction:
     x_data_neg, y_data_neg = np_data_neg[:,:-1],np_data_neg[:,-1]
 
     # make prediction in the negative samples
-    model.load_weights("./Model_split/Km1_CSTCS_3746.hdf5")  
     y_pred_neg = model.predict(x_data_neg,1500)
 
     # evaluate the performance
