@@ -66,13 +66,13 @@ The following is the definition of DeepKme using python.
 
 You can use it to make prediction:
     
-    # load weights to the defined model
-    model.load_weights("./Model_split/Km1_CSTCS_3746.hdf5")  # you can load any model weights as you need in Model_split folder.
+    # Load weights to the defined model
+    model.load_weights("./Model_split/Km1_CSTCS_3746.hdf5")  ## you can load any model weights as you need in Model_split folder.
     
-    # load the positive samples
-    df_Kme = pd.read_csv("./datasets/KmeSites_Collected.csv")  # you can prepare your own unlabled datasets for predicting the Kme/1/2/3 score.
+    # Load the positive samples
+    df_Kme = pd.read_csv("./datasets/KmeSites_Collected.csv")  ## you can prepare your own unlabled datasets for predicting the Kme/1/2/3 score.
 
-    # encoding
+    # Encoding
     def fun_ser_to_numpy_onehot(Se,label):
         AAs = ['Q', 'L', 'N', 'G', 'R', 'F', '_', 'W', 'T', 'E', 'K', 'I', 'D', 'V', 'Y', 'S', 'A', 'C', 'M', 'H', 'P']
         Se = Se.copy()
@@ -86,20 +86,21 @@ You can use it to make prediction:
 
     df_Kme_Sites = df_Kme.SeqWin
     np_data_pos = fun_ser_to_numpy_onehot(df_Kme_Sites,1)
-    x_data_pos, y_data_pos = np_data_pos[:,:-1],np_data_pos[:,-1]
+    x_data_pos = np_data_pos[:,:-1]
+    y_data_pos = np_data_pos[:,-1]  ## If you just make prediction for your own unlabled datasets, this step should be passed.
 
-    # make prediction in the positive samples
+    # Make prediction in the positive samples
     y_pred_pos = model.predict(x_data_pos,1500)
 
-    # load the negative samples
+    # Load the negative samples
     Neg_test = pd.read_csv("./datasets/Negative_samples_for_test.csv")["Negative_samples_for_test"]
     np_data_neg = fun_ser_to_numpy_onehot(Neg_test,0)
     x_data_neg, y_data_neg = np_data_neg[:,:-1],np_data_neg[:,-1]
 
-    # make prediction in the negative samples
+    # Make prediction in the negative samples
     y_pred_neg = model.predict(x_data_neg,1500)
 
-    # evaluate the performance
+    # Evaluate the performance. If you just make prediction for your own unlabled datasets, this step should be passed.
     y_pred = np.concatenate([y_pred_pos,y_pred_neg])
     y_true = np.concatenate([y_data_pos,y_data_neg])
     result = tf.metrics.AUC(1000)(y_true,y_pred[:,3])
