@@ -90,7 +90,7 @@ You can use it to make prediction:
     y_data_pos = np_data_pos[:,-1]  ## If you just make prediction for your own unlabled datasets, this step should be passed.
 
     # Make prediction in the positive samples
-    y_pred_pos = model.predict(x_data_pos,1500)  ## If you make prediction for your own unlabled datasets, this step would get the Km1/2/3/e score.
+    y_pred_pos = model.predict(x_data_pos)  ## If you make prediction for your own unlabled datasets, this step would get the Km1/2/3/e score.
 
     # Load the negative samples
     Neg_test = pd.read_csv("./datasets/Negative_samples_for_test.csv")["Negative_samples_for_test"]
@@ -98,7 +98,7 @@ You can use it to make prediction:
     x_data_neg, y_data_neg = np_data_neg[:,:-1],np_data_neg[:,-1]
 
     # Make prediction in the negative samples
-    y_pred_neg = model.predict(x_data_neg,1500)
+    y_pred_neg = model.predict(x_data_neg)
 
     # Evaluate the performance. If you just make prediction for your own unlabled datasets, this step should be passed.
     y_pred = np.concatenate([y_pred_pos,y_pred_neg])
@@ -112,7 +112,7 @@ Then run the following to create an environment and open your jupyter notebook i
 
     conda create -n ML2  -c conda-forge -c pytorch python=3.9 pytorch=1.9 tensorflow=2.6 cudnn=8 cudatoolkit=11 scipy pandas openpyxl xlrd jupyterlab jupyter_contrib_nbextensions
     conda activate ML2
-    pip install  tensorflow-gpu
+    pip install  tensorflow-gpu  ## if your computer have no gpu, ignore this step.
     cd [your project dir]
     jupyter notebook
 
