@@ -65,6 +65,7 @@ The following is the definition of DeepKme using python.
     model.summary()
 
 You can use it to make prediction:
+    
     # load weights to the defined model
     model.load_weights("./Model_split/Km1_CSTCS_3746.hdf5")  
     
