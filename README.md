@@ -112,7 +112,7 @@ Then run the following to create an environment and open your jupyter notebook i
 
     conda create -n ML2  -c conda-forge -c pytorch python=3.9 pytorch=1.9 tensorflow=2.6 cudnn=8 cudatoolkit=11 scipy pandas openpyxl xlrd jupyterlab jupyter_contrib_nbextensions
     conda activate ML2
-    pip install  tensorflow-gpu  ## if your computer have no gpu, ignore this step.
+    pip install  tensorflow-gpu==2.6  ## if your computer have no gpu, ignore this step.
     cd [your project dir]
     jupyter notebook
 
