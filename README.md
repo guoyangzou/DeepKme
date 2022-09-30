@@ -117,4 +117,4 @@ Then run the following to create an environment and open your jupyter notebook i
     cd [your project dir]
     jupyter notebook
 
-Open the DeepKme.ipynb in your browser where your jupyter notebook works. 
+Open the CNNArginineMe.ipynb in your browser where your jupyter notebook works. 
