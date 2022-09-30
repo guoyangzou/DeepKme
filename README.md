@@ -1,14 +1,14 @@
-# CNNArginineMe
+# DeepKme
 
-CNNArginineMe is the predictor for lysine methylation sites in human proteome.
+DeepKme is the predictor for lysine methylation sites in human proteome.
 
-This package contains five folders and the jupyter notebook file CNNArginineMe.ipynb, described as follows.
+This package contains five folders and the jupyter notebook file DeepKme.ipynb, described as follows.
 
-CNNArginineMe.ipynb contain the codes for the data preprocessing, model construction and the experiment-split test.
+DeepKme.ipynb contain the codes for the data preprocessing, model construction and the experiment-split test.
 
 The ID_convert_list folder inlcudes the original datasets derived from PhosphoSite, each of which contains the information of the Kme types and the experiment source. All the data are integrated as PhosphoSitePlus_withEvidence.csv, stored under the datasets folder.
 
-the Model_split folder contains the CNNArginineMe models with the hdf5 format. The models were constructed using experiment-split method (See Figure 2).
+the Model_split folder contains the DeepKme models with the hdf5 format. The models were constructed using experiment-split method (See Figure 2).
 
 The data folder contains temporary files generated during the running of the jupyter notebook for the experiment-split method. These files can be ignored by users.
 
@@ -16,7 +16,7 @@ The datasets folder contains the positive and negative datasets as well as the d
 
 The orig_dataset contains the Kme information directly downloaded from different databases. These files were later proprocessed and the final files were stored in the datasets folder for the generation of positive and negative samples. 
 
-The following is the definition of CNNArginineMe using python.
+The following is the definition of DeepKme using python.
 
     import tensorflow as tf
     import pandas as pd
@@ -117,4 +117,4 @@ Then run the following to create an environment and open your jupyter notebook i
     cd [your project dir]
     jupyter notebook
 
-Open the CNNArginineMe.ipynb in your browser where your jupyter notebook works. 
+Open the DeepKme.ipynb in your browser where your jupyter notebook works. 
